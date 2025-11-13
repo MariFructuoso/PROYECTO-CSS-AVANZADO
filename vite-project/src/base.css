@@ -4,5 +4,11 @@
 }
 
 :root{
-    
+    --fondo-general: #F8F9FA;
+    --color-general: #3374FA;
+}
+
+body{
+    background-color: var(--fondo-general) ;
+    color: var(--color-general);
 }
