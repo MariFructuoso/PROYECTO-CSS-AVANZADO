@@ -1,14 +1,25 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-:root{
+:root {
     --fondo-general: #F8F9FA;
     --color-general: #3374FA;
 }
 
-body{
-    background-color: var(--fondo-general) ;
+body {
+    background-color: var(--fondo-general);
     color: var(--color-general);
+    display: grid;
+}
+
+header {
+    border-bottom: 2px solid #EDEDED;
+}
+
+.sidebar {
+    & h2 {
+        border-bottom: 2 px solid var(--color-general);
+    }
 }

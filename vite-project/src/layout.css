@@ -1,3 +1,11 @@
+header {
+    display: grid;
+    
+    /* place-content: center; */
+
+    padding: 1rem;
+}
+
 .header-content {
     display: flex;
     flex-flow: row nowrap;
@@ -20,9 +28,32 @@
 
 .page-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    grid-template-columns: 1fr;
+    width: 100%;
+    justify-items: center;
 
     @media screen and (width > 900px){
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: 3fr 1fr;
+    }
+
+    main{
+        container-name: main-container;
+    }
+
+    aside{
+        container-name: aside-container;
+    }
+
+    @container main-container (min-width: 500px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+    @container main-container (min-width: 800px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+    .card-container{
+        display: grid;
+        grid-template-columns: 1fr;        
     }
 }
