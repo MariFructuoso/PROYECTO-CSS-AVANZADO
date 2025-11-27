@@ -6,7 +6,7 @@
             "/^border/": ["px", "%", "rem", "em"],
             "/^font-size|^padding|^gap|^margin/": ["rem", "em"]
         },
-        "unit-allowed-list": ["%", "vw", "px", "rem", "vh", "fr", "em"],
+        "unit-allowed-list": ["deg","%", "vw", "px", "rem", "vh", "fr", "em", "s"],
          "max-nesting-depth": 4,
          "csstools/use-nesting": "always"
     }

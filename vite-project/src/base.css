@@ -1,25 +1,39 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
-    --fondo-general: #F8F9FA;
-    --color-general: #3374FA;
+  --color-bg: #f8f9fa;
+  --color-primary: #3374fa;
+  --color-text: #212529;
+  --color-header-footer: #fff;
+  --font-base: system-ui, -apple-system, "Segoe UI", roboto, sans-serif;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgb(0 0 0 0.1);
+  --transition-duration: 0.3s;
+  --animation-duration: 0.5s;
+  --img-object-fit: cover;
+  --color-footer: #898989;
 }
 
 body {
-    background-color: var(--fondo-general);
-    color: var(--color-general);
-    display: grid;
+  font-family: var(--font-base);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
 }
 
 header {
-    border-bottom: 2px solid #EDEDED;
+  border-bottom: 2px solid #ededed;
 }
 
-.sidebar {
-    & h2 {
-        border-bottom: 2 px solid var(--color-general);
-    }
+:is(h1, h2, h3) {
+  color: var(--color-primary);
+}
+
+:where(header, footer, main, aside) {
+  padding: 1rem;
 }

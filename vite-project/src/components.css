@@ -1,5 +1,58 @@
-.card img {
-    width: 30%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: 
+        transform var(--transition-duration) ease, 
+        box-shadow var(--transition-duration) ease,
+        height var(--transition-duration) ease;
+
+    @supports not (interpolate-size: allow-keywords) {
+        height: auto;
+    }
+
+    &:hover {
+        height: auto;
+    }
+
+    & img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: var(--img-object-fit);
+    }
+
+    &:has(img) .card-content {
+        border-top: 1px solid #eee;
+    }
+
+    &:not(.featured) {
+        border-color: #ccc;
+    }
 }
+
+.button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color var(--transition-duration) ease;
+
+    &:hover {
+        background-color: #004494;
+    }
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+
+    & a {
+        text-decoration: none;
+        color: var(--color-text);
+    }
+}
+
