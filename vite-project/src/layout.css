@@ -15,29 +15,18 @@ header {
   & h1 {
     flex-grow: 1;
   }
-
-  /* nav {
-        display: flex;
-
-        .nav-links {
-            display: flex;
-            flex-direction: row;
-        }
-    } */
 }
 
 .page-container {
   display: grid;
   grid-template-columns: 1fr;
   width: 100%;
-  
-  /* max-width: 1200px; */
-    margin: 0 auto; 
+  max-width: 1200px;
+  margin: 0 auto;
 
   @media screen and (width > 900px) {
     grid-template-columns: 3fr 1fr;
-
-    /* gap: 2rem; */
+    gap: 2rem; 
   }
 
   & main {
@@ -52,60 +41,59 @@ header {
   }
 }
 
-  .card-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
 
-    @container main-container (width >= 500px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  @container main-container (width >= 500px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    @container main-container (width >= 800px) {
-      grid-template-columns: repeat(3, 1fr);
+  @container main-container (width >= 800px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.sidebar {
+  & h2 {
+    border-bottom: 2px solid var(--color-primary);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+  & ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  & a {
+    text-decoration: none;
+    color: var(--color-primary);
+    display: block;
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-duration),
+      color var(--transition-duration);
+
+    &:hover {
+      background-color: var(--color-primary);
+      color: white;
     }
   }
 
-  .sidebar {
-    & h2 {
-        border-bottom: 2px solid var(--color-primary);
-        margin-bottom: 1rem;
-        padding-bottom: 0.5rem;
-    }
-
-    & ul {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    & a {
-        text-decoration: none;
-        color: var(--color-primary);
-        display: block;
-        padding: 0.5rem;
-        border-radius: var(--border-radius);
-        transition: background-color var(--transition-duration), color var(--transition-duration);
-
-        &:hover {
-            background-color: var(--color-primary);
-            color: white;
-        }
-    }
-
-    @container sidebar (width <= 200px) {
-        text-align: center;
-        font-size: 0.9em;
-    }
+  @container sidebar (width <= 200px) {
+    text-align: center;
+    font-size: 0.9em;
+  }
 }
 
 footer {
-    color: var(--color-footer);
-    text-align: center;
-    border-top: 1px solid #ccc;
-    margin-top: 2rem;
-    padding-top: 1rem;
+  color: var(--color-footer);
+  text-align: center;
+  border-top: 1px solid #ccc;
+  margin-top: 2rem;
+  padding-top: 1rem;
 }
-
-
